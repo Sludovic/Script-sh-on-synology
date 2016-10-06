@@ -1,3 +1,18 @@
+#!/bin/bash                                                                                       
+# ex: addsubtilemp4.sh myvideofromthebus.mp4 sub/myvideofromthebus.srt video
+# ex: output a new file in the same folder 
+# ex: with the name myvideo.VOSTFRfromthebus.mp4 
+# ex: and an encode information set to "fre"
+# ex: .srt file will be moved in the folder sub/inserted/
+# params:
+# (needed)$1 = original filename video - blabla.mp4
+# (needed)$2 = filename with subtitle to add - blabla.srt                                                 
+# (needed)$3 = string to replace -                                                                
+# $4 = string for replace -                                                                
+# $5 = folder for output file                                                                     
+# $6 = folder to move srt                                                    
+# take care to not remove filename extension                                                                                                                                                                
+
 if [[ -z "$4" ]]; then
 DATA4=$3.VOSTFR
 else
@@ -15,12 +30,6 @@ if [[ -z "$6" ]]; then
 DATA6=sub/inserted/
 else
 DATA6=$6
-fi
-
-if [[ -z "$7" ]]; then
-DATA7=fre
-else
-DATA7=$7
 fi
 
 finalename=$DATA5"${1/$3/$DATA4}"
